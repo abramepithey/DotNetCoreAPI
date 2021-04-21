@@ -21,9 +21,9 @@ namespace HPlusSport.API.Controllers
         }
         
         [HttpGet]
-        public string GetProducts()
+        public async Task<IActionResult> GetAllProducts()
         {
-            return "Ok";
+            return Ok(await _context.Products.ToArrayAsync());
         }
     }
 }
