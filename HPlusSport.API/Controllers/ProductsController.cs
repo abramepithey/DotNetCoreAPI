@@ -28,6 +28,12 @@ namespace HPlusSport.API.Controllers
         {
             IQueryable<Product> products = _context.Products;
 
+            if (!string.IsNullOrEmpty(queryParameters.SearchTerm))
+            {
+                products = products.Where(p => p.Name.ToLower().Contains(queryParameters.SearchTerm.ToLower())
+                                               || p.Sku.ToLower().Contains(queryParameters.SearchTerm.ToLower()));
+            }
+
             if (queryParameters.MinPrice != null && queryParameters.MinPrice != null)
             {
                 products = products.Where(
