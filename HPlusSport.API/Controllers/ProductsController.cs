@@ -11,7 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HPlusSport.API.Controllers
 {
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("v{v:apiVersion}/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
