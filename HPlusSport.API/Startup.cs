@@ -30,6 +30,17 @@ namespace HPlusSport.API
         {
             services.AddDbContext<ShopContext>(options => options.UseInMemoryDatabase("Shop"));
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("https://localhost:5011")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+            
             services.AddApiVersioning(options =>
             {
                 options.ReportApiVersions = true;
@@ -50,6 +61,8 @@ namespace HPlusSport.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
