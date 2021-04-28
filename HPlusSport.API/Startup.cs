@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HPlusSport.API
 {
@@ -31,6 +32,20 @@ namespace HPlusSport.API
             services.AddDbContext<ShopContext>(options => options.UseInMemoryDatabase("Shop"));
             services.AddControllers();
 
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "http://localhost:5500";
+                    options.RequireHttpsMetadata = false;
+
+                    options.Audience = "hps-api";
+
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false
+                    };
+                });
+            
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -64,6 +79,7 @@ namespace HPlusSport.API
 
             app.UseCors();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
