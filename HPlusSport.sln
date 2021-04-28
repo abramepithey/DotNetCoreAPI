@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPlusSport.Web", "HPlusSpor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPlusSport.IdentityServer", "HPlusSport.IdentityServer\HPlusSport.IdentityServer.csproj", "{FEDE62F5-6FE3-43E8-8354-85B93D9CB00E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPlusSport.ConsoleApp", "HPlusSport.ConsoleApp\HPlusSport.ConsoleApp.csproj", "{FE2109FF-9FDD-4E8A-940D-24810F1576EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FEDE62F5-6FE3-43E8-8354-85B93D9CB00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEDE62F5-6FE3-43E8-8354-85B93D9CB00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEDE62F5-6FE3-43E8-8354-85B93D9CB00E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2109FF-9FDD-4E8A-940D-24810F1576EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2109FF-9FDD-4E8A-940D-24810F1576EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2109FF-9FDD-4E8A-940D-24810F1576EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2109FF-9FDD-4E8A-940D-24810F1576EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
