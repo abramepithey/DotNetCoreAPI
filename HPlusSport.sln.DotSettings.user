@@ -2,4 +2,5 @@
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">/usr/local/share/dotnet/sdk/5.0.202/MSBuild.dll</s:String>
 	
 	
+	
 	</wpf:ResourceDictionary>
